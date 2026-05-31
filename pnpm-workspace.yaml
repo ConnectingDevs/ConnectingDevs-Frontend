@@ -1,0 +1,22 @@
+packages:
+  - .
+
+allowBuilds:
+  '@parcel/watcher': true
+  cypress: true
+  esbuild: true
+  lmdb: true
+  msgpackr-extract: true
+
+overrides:
+  tmp: 0.2.6
+
+minimumReleaseAgeExclude:
+  - '@angular/common@21.2.15'
+  - '@angular/compiler@21.2.15'
+  - '@angular/core@21.2.15'
+  - '@angular/forms@21.2.15'
+  - '@angular/platform-browser-dynamic@21.2.15'
+  - '@angular/platform-browser@21.2.15'
+  - '@angular/router@21.2.15'
+  - '@angular/compiler-cli@21.2.15'
