@@ -45,7 +45,7 @@ const hydrateAuthSession = (authService: AuthService): (() => Promise<unknown>) 
 };
 
 /**
- * Main Angular module for the DevConnect SPA.
+ * Main Angular module for the ConnectingDevs SPA.
  *
  * Key responsibilities:
  * - declares the feature components rendered by the router.

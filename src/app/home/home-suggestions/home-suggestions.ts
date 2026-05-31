@@ -14,7 +14,7 @@ type SuggestionType = (typeof suggestionTypes)[number];
 })
 /**
  * Simple feedback form that opens the user's mail client with a prefilled
- * suggestion message for the DevConnect contact inbox.
+ * suggestion message for the ConnectingDevs contact inbox.
  */
 export class HomeSuggestions {
   private readonly fb = inject(FormBuilder);
@@ -55,7 +55,7 @@ export class HomeSuggestions {
     const subject = `[${this.selectedType}] ${subjectText}`;
     // Keep the email body short and readable inside the user's mail client.
     const bodyLines = [
-      'Hola equipo de DevConnect,',
+      'Hola equipo de ConnectingDevs,',
       '',
       `Tipo: ${this.selectedType}`,
       `Asunto: ${subjectText}`,
