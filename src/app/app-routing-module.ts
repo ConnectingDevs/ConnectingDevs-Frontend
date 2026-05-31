@@ -12,6 +12,7 @@ import { PostDetail } from './post-detail/post-detail';
 import { Profile } from './profile/profile';
 import { Register } from './register/register';
 import { ResetPassword } from './reset-password/reset-password';
+import { VerifyEmail } from './verify-email/verify-email';
 
 /**
  * Central route table for public auth pages and protected private areas.
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: AUTH_PATHS.register, component: Register },
   { path: AUTH_PATHS.forgotPassword, component: ForgotPassword },
   { path: AUTH_PATHS.resetPassword, component: ResetPassword },
+  { path: 'verify-email', component: VerifyEmail },
   { path: 'suggestions', redirectTo: 'home/suggestions', pathMatch: 'full' },
 
   // Ejemplo de ruta protegida con guard.

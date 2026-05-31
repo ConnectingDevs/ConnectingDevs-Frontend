@@ -1,0 +1,17 @@
+<div class="verify-container">
+  <div class="verify-card">
+    <ng-container [ngSwitch]="status">
+      <div *ngSwitchCase="'loading'" class="status loading">
+        <p>Verificando tu email...</p>
+      </div>
+      <div *ngSwitchCase="'success'" class="status success">
+        <p>✅ {{ message }}</p>
+        <p>Serás redirigido al login en unos segundos...</p>
+      </div>
+      <div *ngSwitchCase="'error'" class="status error">
+        <p>❌ {{ message }}</p>
+        <a routerLink="/login">Volver al login</a>
+      </div>
+    </ng-container>
+  </div>
+</div>

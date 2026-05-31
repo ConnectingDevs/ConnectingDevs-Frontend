@@ -37,6 +37,7 @@ import { UiToast } from './shared/ui-toast/ui-toast';
 import { ConfirmModal } from './shared/confirm-modal/confirm-modal';
 import { AuthService } from './services/auth.service';
 import { firstValueFrom } from 'rxjs';
+import { VerifyEmail } from './verify-email/verify-email';
 
 registerLocaleData(localeEs);
 
@@ -81,6 +82,7 @@ const hydrateAuthSession = (authService: AuthService): (() => Promise<unknown>) 
     IconBookmark,
     UiToast,
     ConfirmModal,
+    VerifyEmail,
   ],
   imports: [
     BrowserModule,
