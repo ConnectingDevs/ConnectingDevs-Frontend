@@ -42,7 +42,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: Home,
-    // Si no hay sesion valida, el guard redirige a /login.
     canActivate: [AuthGuard],
     // Rutas hijas renderizadas dentro del router-outlet de Home.
     children: [
