@@ -1,5 +1,7 @@
+import { resolveApiUrl } from '../app/config/runtime-config';
+
 export const environment = {
   production: true,
-  apiUrl: process.env['VITE_API_URL'] || '',
+  apiUrl: resolveApiUrl(undefined, { required: true }),
   contactEmail: 'connectingdevs@gmail.com',
 };
