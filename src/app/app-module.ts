@@ -82,13 +82,13 @@ const hydrateAuthSession = (authService: AuthService): (() => Promise<unknown>) 
     IconBookmark,
     UiToast,
     ConfirmModal,
-    VerifyEmail,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    VerifyEmail,
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
