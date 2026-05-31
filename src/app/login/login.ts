@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
    */
   ngOnInit(): void {
     if (this.route.snapshot.queryParamMap.get('reset') === 'ok') {
-      this.resetSuccessMessage = 'Contraseña restablecida correctamente. Ya podés iniciar sesión.';
+      this.resetSuccessMessage = 'Contraseña restablecida correctamente. Ya puedes iniciar sesión.';
     }
   }
 
