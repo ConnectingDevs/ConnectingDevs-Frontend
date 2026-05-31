@@ -132,6 +132,12 @@
   @include tr.stable-text(1.65);
 }
 
+.post-content {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .post-meta {
   display: flex;
   flex-wrap: wrap;
