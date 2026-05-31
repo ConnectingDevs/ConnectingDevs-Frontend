@@ -1,0 +1,47 @@
+name: Frontend CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          run_install: false
+          cache: true
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Audit dependencies
+        # Keep security meaningful: fail only on high/critical advisories so the
+        # known moderate Cypress transitive advisory does not break CI.
+        run: pnpm audit --audit-level high
+
+      - name: Build production bundle
+        env:
+          VITE_API_URL: https://devconnect-backend-production-c95f.up.railway.app
+        run: pnpm build
+
+      - name: Run unit tests
+        run: pnpm exec ng test --watch=false
