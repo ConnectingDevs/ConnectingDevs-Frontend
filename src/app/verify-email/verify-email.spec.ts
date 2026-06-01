@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideRouter } from '@angular/router';
 
 import { VerifyEmail } from './verify-email';
 
@@ -8,7 +10,11 @@ describe('VerifyEmail', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [VerifyEmail]
+      imports: [VerifyEmail],
+      providers: [
+        provideHttpClientTesting(),
+        provideRouter([]),
+      ],
     })
     .compileComponents();
 
